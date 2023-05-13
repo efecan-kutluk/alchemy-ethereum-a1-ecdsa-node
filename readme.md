@@ -1,3 +1,9 @@
+## Alchemy University - Ethereum Bootcamp - Assignment 1 - ECDSA Node
+
+This project is forked from alchemyplatform/ecdsa-node. In addition to the project defaults, some dummy accounts are generated from the server side. From these accounts, use a private key as sender and an address as recipient. Only the pregenerated accounts are able to transfer money to each other for now.
+
+_Warning_ - Never use a private key that belongs to a real wallet!
+
 ## ECDSA Node
 
 This project is an example of using a client and server to facilitate transfers between different addresses. Since there is just a single server on the back-end handling transfers, this is clearly very centralized. We won't worry about distributed consensus for this project.

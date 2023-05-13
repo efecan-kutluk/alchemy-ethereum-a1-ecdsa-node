@@ -39,6 +39,12 @@ app.post("/send", (req, res) => {
   if(!secp256k1.verify(sign, msgHash, pubKey)){
     res.status(400).send({ message: "Invalid sign!" })
   }
+  else if (sender === recipient) {
+    res.status(400).send({message: "Sending to self is not allowed!"})
+  }
+  else if (!(global.balances.has(sender) || global.balances.has(recipient))) {
+    res.status(400).send({message: "Only the pregenerated accounts are able to transfer money to each other for now..."})
+  }
   else if (global.balances.get(sender) < amount) {
     res.status(400).send({ message: "Not enough funds!" });
   } else {
